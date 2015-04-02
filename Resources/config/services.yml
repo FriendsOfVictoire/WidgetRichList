@@ -1,0 +1,14 @@
+services:
+    victoire_core.widget_richlist_content_resolver:
+        parent: victoire_core.widget_listing_content_resolver
+        tags:
+            - { name: victoire_widget.widget_content_resolver, alias: RichList }
+    #alias to the entity
+    victoire.widget.richlist:
+        class: Victoire\Widget\RichListBundle\Entity\WidgetRichList
+
+    #alias to the form
+    victoire.widget.form.richlist:
+        class: Victoire\Widget\RichListBundle\Form\WidgetRichListType
+        tags:
+            - { name: form.type , alias: victoire_widget_form_richlist }

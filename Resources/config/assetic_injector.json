@@ -1,0 +1,9 @@
+{
+    "require_all":
+    {
+        "stylesheets":
+        {
+            "head": "@VictoireWidgetRichListBundle/Resources/style/richList.less"
+        }
+    }
+}

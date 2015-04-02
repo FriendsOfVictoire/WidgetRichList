@@ -1,0 +1,11 @@
+victoire_core:
+    widgets:
+        RichList:
+            class: "Victoire\\Widget\\RichListBundle\\Entity\\WidgetRichList"
+            name: RichList
+            parent: Listing
+jms_translation:
+    configs:
+        victoire_richlist_bundle:
+            dirs: ["@VictoireRichListBundle"]
+            output_dir: "@VictoireRichListBundle/Resources/translations"

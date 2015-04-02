@@ -1,0 +1,43 @@
+<li class="vic-col-lg-12 vic-request-block">
+    <div class="vic-panel vic-panel-default">
+        <div class="vic-panel-heading">
+            <span class="vic-circled request-number"></span>
+            {{ form_row(item.removeButton) }}
+            {% do item.removeButton %}
+        </div>
+        <div id="vic-nl-form" class="vic-panel-body vic-panel-body-request vic-nl-form">
+            <div class="row">
+                <div class="vic-col-md-12">
+                    <div class="vic-col-md-6">
+                        {{ form_row(item.title) }}
+                    </div>
+                    <div class="vic-col-md-6">
+                        {{ form_row(item.kind) }}
+                    </div>
+                </div>
+                <div class="vic-col-md-12">
+                    {{ form_row(item.description) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="vic-col-md-12">
+                    {{ form_row(item.poster) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="vic-col-md-12">
+                    {{ form_widget(item.linkEnabled) }}
+                    <div class="link-container vic-hidden">
+                        <div class="vic-col-md-6">
+                                {{ form_row(item.linkLabel) }}
+                        </div>
+                        <div class="vic-col-md-6">
+                                {{ form_widget(item.link) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_rest(item) }}
+        </div>
+    </div>
+</li>

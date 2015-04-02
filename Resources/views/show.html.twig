@@ -1,0 +1,19 @@
+{% extends 'VictoireWidgetListingBundle::show.html.twig' %}
+
+{% block content %}
+<div class="row">
+    {% for item in richs %}
+        <div class="col-sm-4 col-md-3">
+            {% include 'VictoireWidgetRichListBundle::_miniItem.html.twig' %}
+        </div>
+
+        {% if cycle([false, false, true], loop.index - 1) or loop.last %}
+            <div class="clearfix-sm"></div>
+        {% endif %}
+
+        {% if cycle([false, false, false, true], loop.index - 1) or loop.last %}
+            <div class="clearfix-md clearfix-lg"></div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock content %}
