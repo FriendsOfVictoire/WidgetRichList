@@ -1,7 +1,7 @@
 <div class="rich-list-item">
     <div class="rich-list-item-image-container">
         {% if item.linkEnabled %}
-        <a href="{{ vic_link_url(item.linkParameters) }}" title="{{ item.linkLabel }}">
+            {{ vic_link(item.linkParameters, item.linkLabel) }}
         {% endif %}
             <div class="rich-list-item-image" style="background-image:url({{ item.poster.url }});">
             </div>
