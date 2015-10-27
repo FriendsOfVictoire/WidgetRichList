@@ -1,4 +1,5 @@
 <?php
+
 namespace Victoire\Widget\RichListBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -6,7 +7,7 @@ use Victoire\Bundle\CoreBundle\Annotations as VIC;
 use Victoire\Widget\ListingBundle\Entity\WidgetListingItem;
 
 /**
- * WidgetRichList
+ * WidgetRichList.
  *
  * @ORM\Table("vic_widget_richlist_item")
  * @ORM\Entity
@@ -65,7 +66,6 @@ class WidgetRichListItem extends WidgetListingItem
      * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
      * @ORM\JoinColumn(name="poster_image_id", referencedColumnName="id", onDelete="CASCADE")
      * @VIC\ReceiverProperty("imageable")
-     *
      */
     protected $poster;
 
@@ -74,7 +74,6 @@ class WidgetRichListItem extends WidgetListingItem
      *
      * @ORM\ManyToOne(targetEntity="WidgetRichList", inversedBy="richs")
      * @ORM\JoinColumn(name="listing_id", referencedColumnName="id", onDelete="CASCADE")
-     *
      */
     protected $richList;
 
@@ -93,7 +92,7 @@ class WidgetRichListItem extends WidgetListingItem
     protected $linkEnabled;
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -103,9 +102,10 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param  string $description
+     *
      * @return $this
      */
     public function setDescription($description)
@@ -116,7 +116,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set firstText
+     * Set firstText.
      *
      * @param string $firstText
      *
@@ -130,7 +130,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Get firstText
+     * Get firstText.
      *
      * @return string
      */
@@ -140,7 +140,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set secondText
+     * Set secondText.
      *
      * @param string $secondText
      *
@@ -154,7 +154,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Get secondText
+     * Get secondText.
      *
      * @return string
      */
@@ -164,7 +164,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set thirdText
+     * Set thirdText.
      *
      * @param string $thirdText
      *
@@ -178,7 +178,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Get thirdText
+     * Get thirdText.
      *
      * @return string
      */
@@ -188,7 +188,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Get richList
+     * Get richList.
      *
      * @return string
      */
@@ -198,7 +198,8 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set richList
+     * Set richList.
+     *
      * @param string $richList
      *
      * @return $this
@@ -211,7 +212,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Get kind
+     * Get kind.
      *
      * @return string
      */
@@ -221,7 +222,8 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set kind
+     * Set kind.
+     *
      * @param string $kind
      *
      * @return $this
@@ -234,7 +236,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Get poster
+     * Get poster.
      *
      * @return string
      */
@@ -244,7 +246,8 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set poster
+     * Set poster.
+     *
      * @param string $poster
      *
      * @return $this
@@ -257,7 +260,7 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Get linkLabel
+     * Get linkLabel.
      *
      * @return string
      */
@@ -267,7 +270,8 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set linkLabel
+     * Set linkLabel.
+     *
      * @param string $linkLabel
      *
      * @return $this
@@ -279,7 +283,7 @@ class WidgetRichListItem extends WidgetListingItem
         return $this;
     }
     /**
-     * is link Enabled
+     * is link Enabled.
      *
      * @return string
      */
@@ -289,7 +293,8 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Set linkEnabled
+     * Set linkEnabled.
+     *
      * @param string $linkEnabled
      *
      * @return $this

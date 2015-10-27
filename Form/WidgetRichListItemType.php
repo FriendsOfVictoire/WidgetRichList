@@ -7,63 +7,66 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Victoire\Widget\ListingBundle\Form\WidgetListingItemType;
 
 /**
- * WidgetRichList form type
+ * WidgetRichList form type.
  */
 class WidgetRichListItemType extends WidgetListingItemType
 {
     /**
-     * define form fields
+     * define form fields.
+     *
      * @param FormBuilderInterface $builder
+     *
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
-        $builder->add('title', null, array(
+        $builder->add('title', null, [
                 'label'    => 'widget_richlist.form.title.label',
                 'required' => true,
-            ))
-            ->add('description', 'ckeditor', array(
+            ])
+            ->add('description', 'ckeditor', [
                 'label'    => 'widget_richlist.form.description.label',
                 'required' => true,
-            ))
-            ->add('kind', null, array(
+            ])
+            ->add('kind', null, [
                 'label'    => 'widget_richlist.form.kind.label',
                 'required' => true,
-            ))
-            ->add('poster', 'media', array(
+            ])
+            ->add('poster', 'media', [
                 'label'    => 'widget_richlist.form.poster.label',
-                'required' => false, ))
+                'required' => false, ])
             ->add('link', 'victoire_link')
-            ->add('linkLabel', null, array(
+            ->add('linkLabel', null, [
                 'label'    => 'form.widget_richlist.linkLabel.label',
                 'required' => false,
-            ))
-            ->add('linkEnabled', 'checkbox', array(
+            ])
+            ->add('linkEnabled', 'checkbox', [
                     'label'    => 'form.widget_richlist.linkEnabled.label',
                     'required' => false,
-                    'attr'     => array(
-                        'onchange' => 'linkEnable($vic(this).is(\':checked\'));',
-                    ),
-            ));
+                    'attr'     => [
+                        'onchange' => 'linkEnable($vic(this).is(\':checked\']);',
+                    ],
+            ]);
     }
 
     /**
-     * bind form to WidgetRichList entity
+     * bind form to WidgetRichList entity.
+     *
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         parent::setDefaultOptions($resolver);
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\RichListBundle\Entity\WidgetRichListItem',
             'translation_domain' => 'victoire',
-        ));
+        ]);
     }
 
     /**
-     * get form name
+     * get form name.
      *
      * @return string The form name
      */
