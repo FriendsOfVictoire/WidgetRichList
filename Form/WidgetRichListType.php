@@ -34,7 +34,7 @@ class WidgetRichListType extends WidgetListingType
                 'entityName' => $entityName,
                 'mode'       => 'static',
             ],
-            "attr"         => ['id' => 'static'],
+            'attr'         => ['id' => 'static'],
         ]);
 
         //add the mode to the form

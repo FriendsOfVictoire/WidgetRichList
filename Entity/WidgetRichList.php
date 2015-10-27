@@ -24,7 +24,7 @@ class WidgetRichList extends WidgetListing
     /**
      * To String function.
      *
-     * @return String
+     * @return string
      */
     public function __toString()
     {
@@ -47,6 +47,7 @@ class WidgetRichList extends WidgetListing
 
         return $this;
     }
+
     /**
      * Add richs.
      *

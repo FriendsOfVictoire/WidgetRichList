@@ -104,7 +104,7 @@ class WidgetRichListItem extends WidgetListingItem
     /**
      * Set description.
      *
-     * @param  string $description
+     * @param string $description
      *
      * @return $this
      */
@@ -282,6 +282,7 @@ class WidgetRichListItem extends WidgetListingItem
 
         return $this;
     }
+
     /**
      * is link Enabled.
      *
