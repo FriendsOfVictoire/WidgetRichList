@@ -2,13 +2,13 @@
     "name": "friendsofvictoire/richlist-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS RichList widget",
-    "keywords": ["cms", "victoire", "RichList", "widget"],
-    "homepage": "http://appventus.com",
+    "keywords": ["DCMS", "Victoire", "widget", "FriendsofVictoire", "Dynamic", "CMS", "RichList"],
+    "homepage": "http://victoire.io",
     "license": "MIT",
     "authors": [
         {
             "name": "Leny BERNARD",
-            "email": "leny@appventus.com"
+            "email": "leny@victoire.io"
         }
     ],
     "require": {

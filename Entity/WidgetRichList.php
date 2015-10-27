@@ -1,11 +1,12 @@
 <?php
+
 namespace Victoire\Widget\RichListBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\Widget\ListingBundle\Entity\WidgetListing;
 
 /**
- * WidgetRichList
+ * WidgetRichList.
  *
  * @ORM\Table("vic_widget_richlist")
  * @ORM\Entity
@@ -17,13 +18,13 @@ class WidgetRichList extends WidgetListing
      *
      * @ORM\OneToMany(targetEntity="WidgetRichListItem", mappedBy="richList", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\OrderBy({"position" = "ASC"})
-     *
      */
     protected $richs;
 
     /**
-     * To String function
-     * @return String
+     * To String function.
+     *
+     * @return string
      */
     public function __toString()
     {
@@ -31,7 +32,8 @@ class WidgetRichList extends WidgetListing
     }
 
     /**
-     * Set richs
+     * Set richs.
+     *
      * @param array $richs
      *
      * @return WidgetListing
@@ -45,8 +47,10 @@ class WidgetRichList extends WidgetListing
 
         return $this;
     }
+
     /**
-     * Add richs
+     * Add richs.
+     *
      * @param WidgetListingItem $sliderItem
      *
      * @return WidgetListing
@@ -60,7 +64,8 @@ class WidgetRichList extends WidgetListing
     }
 
     /**
-     * Remove richs
+     * Remove richs.
+     *
      * @param WidgetRichListItem $rich
      */
     public function removeRich(WidgetRichListItem $rich)
@@ -69,7 +74,7 @@ class WidgetRichList extends WidgetListing
     }
 
     /**
-     * Get richs
+     * Get richs.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
