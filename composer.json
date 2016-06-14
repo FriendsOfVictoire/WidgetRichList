@@ -1,38 +1,33 @@
 {
-    "name"             : "friendsofvictoire/richlist-widget",
-    "type"             : "symfony-bundle",
-    "description"      : "Victoire DCMS RichList widget",
-    "keywords"         : [
+    "name": "friendsofvictoire/richlist-widget",
+    "type": "symfony-bundle",
+    "description": "Victoire DCMS RichList widget",
+    "keywords": [
         "DCMS",
         "Victoire",
         "widget",
         "FriendsofVictoire",
         "RichList"
     ],
-    "homepage"         : "http://victoire.io",
-    "license"          : "MIT",
-    "authors"          : [
+    "homepage": "http://victoire.io",
+    "license": "MIT",
+    "authors": [
         {
             "name" : "Leny BERNARD",
             "email": "leny@victoire.io"
         }
     ],
     "require"          : {
-        "php"                             : ">=5.3.3",
-        "symfony/framework-bundle"        : "~2.3",
-        "victoire/victoire"               : "~1.3",
-        "friendsofvictoire/listing-widget": "1.3.x-dev"
+        "php": ">=5.5.9",
+        "symfony/framework-bundle": "~2.8|~3.0",
+        "victoire/victoire": "~1.5"
+        "friendsofvictoire/listing-widget": "~1.3"
     },
-    "autoload"         : {
+    "autoload": {
         "psr-0": {
             "Victoire\\Widget\\RichListBundle": ""
         }
     },
     "minimum-stability": "dev",
-    "target-dir"       : "Victoire/Widget/RichListBundle",
-    "extra"            : {
-        "branch-alias": {
-            "dev-master": "1.3.x-dev"
-        }
-    }
+    "target-dir": "Victoire/Widget/RichListBundle"
 }
