@@ -4,6 +4,9 @@ namespace Victoire\Widget\RichListBundle\Form;
 
 use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\FormBundle\Form\Type\LinkType;
 use Victoire\Bundle\MediaBundle\Form\Type\MediaType;
@@ -21,14 +24,14 @@ class WidgetRichListItemType extends WidgetListingItemType
      *
      * @param array $options
      */
-    public function buildForm($builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
         $builder->add('title', null, [
                 'label'    => 'widget_richlist.form.title.label',
                 'required' => true,
             ])
-            ->add('description', CKEditorType::class, [
+            ->add('description', TextareaType::class, [
                 'label'    => 'widget_richlist.form.description.label',
                 'required' => true,
             ])

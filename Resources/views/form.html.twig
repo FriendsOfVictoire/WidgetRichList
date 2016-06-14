@@ -53,21 +53,12 @@
         //      think for a collectino with N items, if you delete a children in the middle of the collection, you have N-1 items but the last still have the N key so we can't use it)
         var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
         var currentFormContainer = $newLinkContainer.before(newForm);
-        showSelectedLinkType($vic('.linkType-select'));
     }
 
 
     $vic(document).on('click', 'button[data-action="remove-block"]', function(e) {
         e.preventDefault();
         $vic(this).parents('li').remove();
-    });
-
-
-    //Fix for ckeditor to save in ajax mode
-    $vic(document).on('victoire_widget_form_create_presubmit victoire_widget_form_update_presubmit', function(event) {
-        for ( instance in CKEDITOR.instances ) {
-            CKEDITOR.instances[instance].updateElement();
-        }
     });
 
     function linkEnable(value) {

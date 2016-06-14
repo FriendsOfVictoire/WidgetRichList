@@ -23,14 +23,14 @@ class WidgetRichListType extends WidgetListingType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('richs', CollectionType::class, [
-            'entry_type' => new WidgetRichListItemType($options['entityName'], $options['namespace'], $options['widget']),
+            'entry_type' => WidgetRichListItemType::class,
             'allow_add' => true,
             'allow_delete' => true,
             'by_reference' => false,
             'options' => [
                 'namespace' => $options['namespace'],
-                'entityName' => $options['entityName'],
-                'mode' => 'static',
+                'businessEntityId' => $options['businessEntityId'],
+                'widget'           => $options['widget'],
             ],
             'attr' => ['id' => 'static'],
         ]);

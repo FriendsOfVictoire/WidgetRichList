@@ -4,6 +4,7 @@ victoire_core:
             class: "Victoire\\Widget\\RichListBundle\\Entity\\WidgetRichList"
             name: RichList
             parent: Listing
+            cache: false
 jms_translation:
     configs:
         victoire_richlist_bundle:
