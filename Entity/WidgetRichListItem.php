@@ -64,10 +64,19 @@ class WidgetRichListItem extends WidgetListingItem
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
-     * @ORM\JoinColumn(name="poster_image_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")
      * @VIC\ReceiverProperty("imageable")
      */
-    protected $poster;
+    protected $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\MediaBundle\Entity\Media")
+     * @ORM\JoinColumn(name="image2_id", referencedColumnName="id", onDelete="CASCADE")
+     * @VIC\ReceiverProperty("imageable")
+     */
+    protected $image2;
 
     /**
      * @var string
@@ -236,25 +245,49 @@ class WidgetRichListItem extends WidgetListingItem
     }
 
     /**
-     * Get poster.
+     * Get image.
      *
      * @return string
      */
-    public function getPoster()
+    public function getImage()
     {
-        return $this->poster;
+        return $this->image;
     }
 
     /**
-     * Set poster.
+     * Set image.
      *
-     * @param string $poster
+     * @param string $image
      *
      * @return $this
      */
-    public function setPoster($poster)
+    public function setImage($image)
     {
-        $this->poster = $poster;
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image2.
+     *
+     * @return string
+     */
+    public function getImage2()
+    {
+        return $this->image2;
+    }
+
+    /**
+     * Set image2.
+     *
+     * @param string $image2
+     *
+     * @return $this
+     */
+    public function setImage2($image2)
+    {
+        $this->image2 = $image2;
 
         return $this;
     }

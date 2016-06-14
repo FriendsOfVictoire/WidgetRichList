@@ -19,11 +19,16 @@
                     {{ form_row(item.description) }}
                 </div>
             </div>
+
             <div class="row">
-                <div class="vic-col-md-12">
-                    {{ form_row(item.poster) }}
+                <div class="vic-col-md-6">
+                    {{ form_row(item.image) }}
+                </div>
+                <div class="vic-col-md-6">
+                    {{ form_row(item.image2) }}
                 </div>
             </div>
+
             <div class="row">
                 <div class="vic-col-md-12">
                     {{ form_widget(item.linkEnabled) }}

@@ -39,8 +39,11 @@ class WidgetRichListItemType extends WidgetListingItemType
                 'label'    => 'widget_richlist.form.kind.label',
                 'required' => true,
             ])
-            ->add('poster', MediaType::class, [
-                'label'    => 'widget_richlist.form.poster.label',
+            ->add('image', MediaType::class, [
+                'label'    => 'widget_richlist.form.image.label',
+                'required' => false, ])
+            ->add('image2', MediaType::class, [
+                'label'    => 'widget_richlist.form.image2.label',
                 'required' => false, ])
             ->add('link', LinkType::class)
             ->add('linkLabel', null, [
