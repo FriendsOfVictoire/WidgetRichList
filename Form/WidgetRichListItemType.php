@@ -2,8 +2,11 @@
 
 namespace Victoire\Widget\RichListBundle\Form;
 
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Victoire\Bundle\FormBundle\Form\Type\LinkType;
+use Victoire\Bundle\MediaBundle\Form\Type\MediaType;
 use Victoire\Widget\ListingBundle\Form\WidgetListingItemType;
 
 /**
@@ -18,14 +21,14 @@ class WidgetRichListItemType extends WidgetListingItemType
      *
      * @param array $options
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm($builder, array $options)
     {
         parent::buildForm($builder, $options);
         $builder->add('title', null, [
                 'label'    => 'widget_richlist.form.title.label',
                 'required' => true,
             ])
-            ->add('description', 'ckeditor', [
+            ->add('description', CKEditorType::class, [
                 'label'    => 'widget_richlist.form.description.label',
                 'required' => true,
             ])
@@ -33,15 +36,15 @@ class WidgetRichListItemType extends WidgetListingItemType
                 'label'    => 'widget_richlist.form.kind.label',
                 'required' => true,
             ])
-            ->add('poster', 'media', [
+            ->add('poster', MediaType::class, [
                 'label'    => 'widget_richlist.form.poster.label',
                 'required' => false, ])
-            ->add('link', 'victoire_link')
+            ->add('link', LinkType::class)
             ->add('linkLabel', null, [
                 'label'    => 'form.widget_richlist.linkLabel.label',
                 'required' => false,
             ])
-            ->add('linkEnabled', 'checkbox', [
+            ->add('linkEnabled', CheckboxType::class, [
                     'label'    => 'form.widget_richlist.linkEnabled.label',
                     'required' => false,
                     'attr'     => [
@@ -53,11 +56,11 @@ class WidgetRichListItemType extends WidgetListingItemType
     /**
      * bind form to WidgetRichList entity.
      *
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\RichListBundle\Entity\WidgetRichListItem',
@@ -66,11 +69,11 @@ class WidgetRichListItemType extends WidgetListingItemType
     }
 
     /**
-     * get form name.
+     * get form block prefix.
      *
      * @return string The form name
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'victoire_widget_form_richlist';
     }

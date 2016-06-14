@@ -2,8 +2,10 @@
 
 namespace Victoire\Widget\RichListBundle\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Widget\ListingBundle\Form\WidgetListingType;
 
 /**
@@ -20,40 +22,36 @@ class WidgetRichListType extends WidgetListingType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $entityName = $options['entityName'];
-        $namespace = $options['namespace'];
-        $mode = $options['mode'];
-
-        $builder->add('richs', 'collection', [
-            'type'         => new WidgetRichListItemType($entityName, $namespace, $options['widget']),
-            'allow_add'    => true,
+        $builder->add('richs', CollectionType::class, [
+            'entry_type' => new WidgetRichListItemType($options['entityName'], $options['namespace'], $options['widget']),
+            'allow_add' => true,
             'allow_delete' => true,
             'by_reference' => false,
-            'options'      => [
-                'namespace'  => $namespace,
-                'entityName' => $entityName,
-                'mode'       => 'static',
+            'options' => [
+                'namespace' => $options['namespace'],
+                'entityName' => $options['entityName'],
+                'mode' => 'static',
             ],
-            'attr'         => ['id' => 'static'],
+            'attr' => ['id' => 'static'],
         ]);
 
         //add the mode to the form
-        $builder->add('mode', 'hidden', [
-            'data' => $mode,
+        $builder->add('mode', HiddenType::class, [
+            'data' => $options['mode'],
         ]);
 
         //add the slot to the form
-        $builder->add('slot', 'hidden', []);
+        $builder->add('slot', HiddenType::class, []);
     }
 
     /**
      * bind form to WidgetRichList entity.
      *
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\RichListBundle\Entity\WidgetRichList',
@@ -63,11 +61,11 @@ class WidgetRichListType extends WidgetListingType
     }
 
     /**
-     * get form name.
+     * get form block prefix.
      *
      * @return string The form name
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'victoire_widget_form_richlist';
     }
