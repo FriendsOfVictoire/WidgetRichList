@@ -6,8 +6,6 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Victoire\Bundle\CoreBundle\Form\AsynchronousType;
-use Victoire\Bundle\CoreBundle\Form\QuantumType;
 use Victoire\Widget\ListingBundle\Form\WidgetListingType;
 
 /**
@@ -29,8 +27,7 @@ class WidgetRichListType extends WidgetListingType
             'allow_add' => true,
             'allow_delete' => true,
             'by_reference' => false,
-            'options'            => [
-                'namespace'        => $options['namespace'],
+            'entry_options'            => [
                 'businessEntityId' => $options['businessEntityId'],
                 'widget'           => $options['widget'],
             ],
@@ -45,21 +42,6 @@ class WidgetRichListType extends WidgetListingType
         //add the slot to the form
         $builder->add('slot', HiddenType::class, []);
         $this->addCriteriasFields($builder, $options);
-
-        $builder->add('quantum', QuantumType::class, [
-            'label'    => 'victoire.widget.type.quantum.label',
-            'attr'     => [
-                'data-flag' => 'v-quantum-name',
-            ],
-        ]);
-
-        $builder->add('asynchronous', AsynchronousType::class, [
-            'label'    => 'victoire.widget.type.asynchronous.label',
-            'required' => false,
-            'attr'     => [
-                'class' => 'vic-col-xs-12',
-            ],
-        ]);
     }
 
     /**
