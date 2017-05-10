@@ -16,15 +16,15 @@ checkout:
 
 dependencies:
   override:
-    - bash victoire-test-suite/dependencies.sh friendsofvictoire/date-widget
+    - bash victoire-test-suite/dependencies.sh friendsofvictoire/richlist-widget
   cache_directories:
     - ~/.composer/cache
 
 test:
   override:
-    - bash victoire-test-suite/circle.sh friendsofvictoire/date-widget:
+    - bash victoire-test-suite/circle.sh friendsofvictoire/richlist-widget:
         parallel: true
-    - bash victoire-test-suite/test.sh friendsofvictoire/date-widget
+    - bash victoire-test-suite/test.sh friendsofvictoire/richlist-widget
 
 general:
   artifacts:
