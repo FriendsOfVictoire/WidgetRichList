@@ -6,35 +6,35 @@
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
-      <trans-unit resname="widget.richlist.new.action.label">
+      <trans-unit id="1" resname="widget.richlist.new.action.label">
         <source>widget.richlist.new.action.label</source>
         <target>Rich List</target>
       </trans-unit>
-      <trans-unit resname="modal.form.widget.type.richlist.label">
+      <trans-unit id="2" resname="modal.form.widget.type.richlist.label">
         <source>modal.form.widget.type.richlist.label</source>
         <target>Rich List</target>
       </trans-unit>
-      <trans-unit resname="widget_richlist.form.title.label">
+      <trans-unit id="3" resname="widget_richlist.form.title.label">
         <source>widget_richlist.form.title.label</source>
         <target>Título</target>
       </trans-unit>
-      <trans-unit resname="widget_richlist.form.description.label">
+      <trans-unit id="4" resname="widget_richlist.form.description.label">
         <source>widget_richlist.form.description.label</source>
         <target>Descripción</target>
       </trans-unit>
-      <trans-unit resname="widget_richlist.form.kind.label">
+      <trans-unit id="5" resname="widget_richlist.form.kind.label">
         <source>widget_richlist.form.kind.label</source>
         <target>Tipo</target>
       </trans-unit>
-      <trans-unit resname="widget_richlist.form.poster.label">
+      <trans-unit id="6" resname="widget_richlist.form.poster.label">
         <source>widget_richlist.form.poster.label</source>
         <target>Cartel</target>
       </trans-unit>
-      <trans-unit resname="form.widget_richlist.linkEnabled.label">
+      <trans-unit id="7" resname="form.widget_richlist.linkEnabled.label">
         <source>form.widget_richlist.linkEnabled.label</source>
         <target>Botón activado ?</target>
       </trans-unit>
-      <trans-unit resname="form.widget_richlist.linkLabel.label">
+      <trans-unit id="8" resname="form.widget_richlist.linkLabel.label">
         <source>form.widget_richlist.linkLabel.label</source>
         <target>Etiqueta del botón</target>
       </trans-unit>
