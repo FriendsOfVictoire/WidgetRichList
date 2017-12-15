@@ -29,7 +29,7 @@ class WidgetRichListType extends WidgetListingType
             'allow_add' => true,
             'allow_delete' => true,
             'by_reference' => false,
-            'options'            => [
+            'entry_options' => [
                 'namespace'        => $options['namespace'],
                 'businessEntityId' => $options['businessEntityId'],
                 'widget'           => $options['widget'],
