@@ -52,14 +52,6 @@ class WidgetRichListType extends WidgetListingType
                 'data-flag' => 'v-quantum-name',
             ],
         ]);
-
-        $builder->add('asynchronous', AsynchronousType::class, [
-            'label'    => 'victoire.widget.type.asynchronous.label',
-            'required' => false,
-            'attr'     => [
-                'class' => 'vic-col-xs-12',
-            ],
-        ]);
     }
 
     /**
